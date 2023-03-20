@@ -5,7 +5,8 @@ module.exports = {
     "./pages/**/*.{html,jsx}",
     "./index.html",
     "./public/index.html",
-    "./src/**/*.{js,jsx,ts,tsx}"
+    "./src/**/*.{js,jsx,ts,tsx}",
+    "./public/**/*.{js,jsx,ts,tsx,pug,html}"
   ],
   theme: {
     extend: {},
