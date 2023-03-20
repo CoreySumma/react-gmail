@@ -1,4 +1,4 @@
-import logo from "../../../src/logo.svg";
+import logo from "../../assets/two.png";
 import NavBar from '../../components/NavBar/NavBar';
 import "./App.css";
 
@@ -7,16 +7,10 @@ export default function App() {
     <div className="App">
       <NavBar />
       <header className="App-header">
+        <h1 className="text-5xl">Skip the appetizer and cut right to the main course.</h1>
+        <br />
+        <p className="text-3xl">Get the run down on all your daily emails with the click of a button.</p>
         <img src={logo} className="App-logo" alt="logo" />
-        <h2>Welcome to API HELL. So nice to see you again.</h2>
-        <h1 class="font-serif text-6xl font-bold underline">Hello world!</h1>
-        <p>
-          This app will attempt to use google Oauth2 API and Gmail API so you
-          can login to your email and get a summary
-          <br /> of each message for the day classified by urgency using OpenAI
-          API.
-        </p>
-        <p>I will try to see how well gpt-4 can interpret human language</p>
       </header>
     </div>
   );
