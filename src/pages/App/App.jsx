@@ -7,6 +7,7 @@ export default function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <h2>Welcome to API HELL. So nice to see you again.</h2>
+        <h1 class="text-6xl font-bold underline">Hello world!</h1>
         <p>
           This app will attempt to use google Oauth2 API and Gmail API so you
           can login to your email and get a summary
