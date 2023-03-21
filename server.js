@@ -3,11 +3,12 @@ var session = require("express-session");
 var passport = require("passport");
 const path = require("path");
 const logger = require("morgan");
+var app = express();
 
 require("dotenv").config();
 require("./config/passport");
 
-var app = express();
+var usersRouter = require('./routes/users');
 
 app.use(
   session({
@@ -16,6 +17,11 @@ app.use(
     saveUninitialized: true,
   })
 );
+
+app.use(function(req, res, next) {
+  res.locals.user = req.user;
+  next();
+});
 
 app.use(passport.initialize());
 app.use(passport.session());
@@ -38,3 +44,4 @@ app.listen(port, function () {
 });
 
 
+app.use('/users', require('./routes/users'));

@@ -1,7 +1,10 @@
 import React from "react";
+import { useState } from "react";
 import logo from "../../assets/sausage.png";
 
 export default function NavBar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-black transition ease transform duration-300`;
   return (
     <nav className="bg-gray-600">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -30,20 +33,30 @@ export default function NavBar() {
             </div>
           </div>
           <div className="md:hidden">
-            <button className="p-2 inline-flex items-center justify-center rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
-              <span className="sr-only">Open main menu</span>
-              <svg
-                className="block h-6 w-6"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
+            <button
+              className="flex flex-col h-12 w-12 border-2 border-black rounded justify-center items-center group"
+              onClick={() => setIsOpen(!isOpen)}
+            >
+              <div
+                className={`${genericHamburgerLine} ${
+                  isOpen
+                    ? "rotate-45 translate-y-3 opacity-50 group-hover:opacity-100"
+                    : "opacity-50 group-hover:opacity-100"
+                }`}
+              />
+              <div
+                className={`${genericHamburgerLine} ${
+                  isOpen ? "opacity-0" : "opacity-50 group-hover:opacity-100"
+                }`}
+              />
+              <div
+                className={`${genericHamburgerLine} ${
+                  isOpen
+                    ? "-rotate-45 -translate-y-3 opacity-50 group-hover:opacity-100"
+                    : "opacity-50 group-hover:opacity-100"
+                }`}
+              />
+              <path d="M4 6h16M4 12h16M4 18h16"></path>
             </button>
           </div>
         </div>
