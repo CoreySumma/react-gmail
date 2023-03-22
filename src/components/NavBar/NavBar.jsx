@@ -33,9 +33,12 @@ export default function NavBar() {
                   Log In
                 </a>
 
-                <button className="bg-gray-800 border hover:bg-white hover:text-gray-800 hover:border-black text-white font-semibold py-2 px-4 rounded-lg transition ease-in-out duration-300">
+                <a
+                  href="/logout"
+                  className="bg-gray-800 border hover:bg-white hover:text-gray-800 hover:border-black text-white font-semibold py-2 px-4 rounded-lg transition ease-in-out duration-300"
+                >
                   Log Out
-                </button>
+                </a>
               </div>
             </div>
             <div className="md:hidden">

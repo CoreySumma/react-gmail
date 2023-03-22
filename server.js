@@ -6,7 +6,6 @@ const logger = require("morgan");
 var app = express();
 var router = express.Router();
 
-
 require("dotenv").config();
 require("./config/passport");
 
