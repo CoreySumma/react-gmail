@@ -26,9 +26,13 @@ export default function NavBar() {
             </div>
             <div className="hidden md:block">
               <div className="ml-4 flex items-center md:ml-6">
-                <button className="bg-white border hover:border-white hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-2 px-4 rounded-lg mr-2 transition ease-in-out duration-300">
+                <a
+                  href="/auth/google"
+                  className="bg-white border hover:border-white hover:bg-gray-800 hover:text-white text-gray-800 font-semibold py-2 px-4 rounded-lg mr-2 transition ease-in-out duration-300"
+                >
                   Log In
-                </button>
+                </a>
+
                 <button className="bg-gray-800 border hover:bg-white hover:text-gray-800 hover:border-black text-white font-semibold py-2 px-4 rounded-lg transition ease-in-out duration-300">
                   Log Out
                 </button>
@@ -61,7 +65,7 @@ export default function NavBar() {
                 {isOpen && (
                   <div className="absolute right-0 top-16 bg-black w-48 rounded-md py-2 shadow-lg">
                     <a
-                      href="#"
+                      href="/auth/google"
                       className="block px-4 py-2 text-sm text-white hover:bg-gray-700 hover:underline transition ease-in-out duration-300"
                     >
                       Log In
