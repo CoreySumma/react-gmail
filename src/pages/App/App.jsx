@@ -1,6 +1,7 @@
 import logo from "../../assets/two.png";
 import NavBar from '../../components/NavBar/NavBar';
 import "./App.css";
+import React, { useState, useEffect } from "react";
 
 export default function App() {
   return (

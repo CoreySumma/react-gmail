@@ -8,6 +8,7 @@ var router = express.Router();
 
 require("dotenv").config();
 require("./config/passport");
+require('./config/database');
 
 var usersRouter = require('./routes/users');
 
@@ -45,18 +46,23 @@ app.get('/auth/google', passport.authenticate(
   {
     scope: ['profile', 'email'],
     // Optional
-    prompt: 'select_account'
+    prompt: 'consent'
   }
 ));
 
 app.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect: '/',
+    successRedirect: '/meatymail',
     // Change to what's best for YOUR app
     failureRedirect: '/'
   }
 ));
+
+app.get('/api/userinfo', (req, res) => {
+  const name = req.user.name;
+  res.json({ name });
+});
 
 app.get('/logout', function (req, res) {
   req.logout(function () {
@@ -64,7 +70,7 @@ app.get('/logout', function (req, res) {
   });
 });
 
-app.get("/", function (req, res) {
+app.get("/*", function (req, res) {
   res.sendFile(path.join(__dirname, "build", "index.html"));
 });
 
